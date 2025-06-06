@@ -77,25 +77,33 @@ const TasksList = ({ tasks, updateTask, updateCallback }) => {
               className={task.completed ? "completed-task" : ""}
             >
               <td>{task.task_name}</td>
-              <td>{task.priority}</td>
+              <td>
+                <span
+                  className={`priority-tag priority-${task.priority.toLowerCase()}`}
+                >
+                  {task.priority}
+                </span>
+              </td>
               <td>
                 <button
+                  className="mark-btn"
                   onClick={() => taskDone(task.id)}
                   disabled={task.completed}
                 >
-                  Task Done!
+                 ✅ Done!
                 </button>
                 <button
+                  className="modify-btn"
                   onClick={() => updateTask(task)}
                   disabled={task.completed}
                 >
-                  Modify
+                 🖋️ Modify
                 </button>
                 <button
                   className="delete-btn"
                   onClick={() => onDelete(task.id)}
                 >
-                  Delete
+                 🗑️ Remove
                 </button>
               </td>
             </tr>

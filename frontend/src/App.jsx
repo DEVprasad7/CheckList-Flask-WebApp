@@ -47,7 +47,7 @@ function App() {
     <>
       <h1>List Of Tasks</h1>
       <TasksList tasks={tasks} updateTask={openEditModal} updateCallback={onUpdate} />
-      <button onClick={openCreateModal}>Create New Task</button>
+      <button className="create-btn" onClick={openCreateModal}>➕ Add Task</button>
       {isModalOpen && <div className="modal">
         <div className="modal-content">
           <span className="close" onClick={closeModal}>&times;</span>

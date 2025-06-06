@@ -44,12 +44,21 @@ button {
   transition: background-color 0.3s;
 }
 
-button:not([disabled]) {
+button.mark-btn:not([disabled]) {
+  background-color: #5eb3f9;
+  color: rgb(29, 5, 5);
+}
+
+button.mark-btn:not([disabled]):hover {
+  background-color: #52708f;
+}
+
+button.submit-btn:not([disabled]) {
   background-color: #4caf50;
   color: white;
 }
 
-button:not([disabled]):hover {
+button.submit-btn:not([disabled]):hover {
   background-color: #45a049;
 }
 
@@ -67,11 +76,30 @@ button[disabled] {
 
 /* Delete button specific styling */
 .delete-btn {
-  background-color: #ff4444 !important;
+  background-color: #fe6565 !important;
 }
 
 .delete-btn:hover {
   background-color: #cc0000 !important;
+}
+
+.modify-btn {
+  background-color: #cccccc;
+}
+
+.modify-btn:hover {
+  background-color: #b3b3b3;
+}
+
+.create-btn {
+  background-color: #e2e2e2;
+  color: rgb(38, 38, 38);
+  border-color: #0a0a0a;
+}
+
+.create-btn:hover {
+  background-color: #d1d1d1;
+  color: rgb(0, 0, 0);
 }
 
 .modal {
@@ -98,4 +126,118 @@ button[disabled] {
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+/* Form styling */
+.task-form {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.priority-options {
+  display: flex;
+  gap: 15px;
+}
+
+.priority-radio {
+  display: none;
+}
+
+.priority-label {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.priority-label:hover {
+  opacity: 0.8;
+}
+
+.priority-label.high {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.priority-label.normal {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-color: #1976d2;
+}
+
+.priority-label.low {
+  background-color: #e8f5e9;
+  color: #388e3c;
+  border-color: #388e3c;
+}
+
+.priority-radio:checked + .priority-label.high {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.priority-radio:checked + .priority-label.normal {
+  background-color: #1976d2;
+  color: white;
+}
+
+.priority-radio:checked + .priority-label.low {
+  background-color: #388e3c;
+  color: white;
+}
+
+/* Priority colors in task list */
+.priority-tag {
+
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.priority-high {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+}
+
+.priority-normal {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #1976d2;
+}
+
+.priority-low {
+    background-color: #e8f5e9;
+    color: #388e3c;
+    border: 1px solid #388e3c;
+}
+
+/* Update completed task style to not override priority colors */
+.completed-task .priority-tag {
+    opacity: 0.6;
 }
